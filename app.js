@@ -8,7 +8,7 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user");
 const flash = require("connect-flash");
 const {isLoggedIn} = require('./middleware')
-
+const port = process.env.PORT || 8000;
 //chatting app
 const http = require('http');
 const server = http.createServer(app);
@@ -100,6 +100,6 @@ io.on("connection",(socket)=>{
 
 
 
-server.listen(8080, () => {
-  console.log("Server running at port 8080");
+server.listen(port, () => {
+  console.log("Server running");
 });
